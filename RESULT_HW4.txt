@@ -1,0 +1,141 @@
+ТЕСТ 1.
+
+Команда в терминал:
+python -m doctest -v -o NORMALIZE_WHITESPACE test_homework4_1.py
+
+Результаты вывода:
+Trying:
+    encode ('MAI-PYTHON-2019')
+Expecting:
+    '-- .- .. -....- .--. -.-- - .... --- -. -....- ..---
+    ----- .---- ----.'
+ok
+Trying:
+    encode('')
+Expecting:
+    ''
+ok
+Trying:
+    encode(',,-')
+Expecting:
+    '--..-- --..-- -....-'
+ok
+Trying:
+    encode ('SOS') # doctest: -NORMALIZE_WHITESPACE
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode(1)
+Expecting:
+    Traceback (most recent call last):
+        ...
+    TypeError: 'int' object is not iterable
+ok
+1 items had no tests:
+    homework4_1
+1 items passed all tests:
+   5 tests in homework4_1.encode
+5 tests in 2 items.
+5 passed and 0 failed.
+Test passed.
+
+
+
+
+ТЕСТ 2.
+
+Команда в терминал:
+python -m pytest -v test_homework4_2.py
+
+Результаты вывода:
+====================================================== test session starts =======================================================
+platform win32 -- Python 3.8.8, pytest-6.2.3, py-1.10.0, pluggy-0.13.1 -- C:\Users\korne\anaconda3\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\korne\PycharmProjects\Avito_Analytics_Academy\omd
+plugins: anyio-2.2.0
+collected 4 items                                                                                                                 
+
+homework4_2.py::test_decode[-- .- .. -....- .--. -.-- - .... --- -. -....- ..--- ----- .---- ----.-MAI-PYTHON-2019] PASSED  [ 25%]
+homework4_2.py::test_decode[--..-- --..-- -....--,,-] PASSED                                                                [ 50%]
+homework4_2.py::test_decode[-] PASSED                                                                                       [ 75%]
+homework4_2.py::test_decode[... --- ...-SOS] PASSED                                                                         [100%]
+================================================== 4 passed in 0.03s =============================================================
+
+
+
+
+ТЕСТ 3.
+
+Команда в терминал:
+python -m unittest -v test_homework4_3.py
+
+Результаты вывода:
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+
+(base) C:\Users\korne\PycharmProjects\Avito_Analytics_Academy\omd>python -m unittest -v test_homework4_3.py
+test_empty_string (test_homework4_3.TestCountLetters) ... ok
+test_one_category (test_homework4_3.TestCountLetters) ... ok
+test_several_categories (test_homework4_3.TestCountLetters) ... ok
+test_twice_one_categoriy (test_homework4_3.TestCountLetters) ... ok
+
+----------------------------------------------------------------------
+
+
+
+
+ТЕСТ 4.
+
+Команда в терминал:
+python -m pytest -v test_homework4_4.py
+
+Результаты вывода:
+==================================================== test session starts =====================================================
+platform win32 -- Python 3.8.8, pytest-7.4.3, pluggy-0.13.1 -- C:\Users\korne\anaconda3\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\korne\PycharmProjects\Avito_Analytics_Academy\omd
+plugins: anyio-2.2.0
+collected 4 items                                                                                                             
+
+test_homework4_4.py::test_one_category PASSED                                                                           [ 25%]
+test_homework4_4.py::test_several_categories PASSED                                                                     [ 50%]
+test_homework4_4.py::test_twice_one_category PASSED                                                                     [ 75%]
+test_homework4_4.py::test_empty_string_error PASSED                                                                     [100%]
+
+===================================================== 4 passed in 0.02s ======================================================
+
+
+
+
+ТЕСТ 5.
+
+Команды в терминал:
+
+python -m pytest -v test_homework4_5.py  # для запуска тестирования
+
+coverage report -m  # для отображения статистики покрытия кода тестами
+
+
+Результаты вывода:
+============================================================ test session starts ============================================================
+platform win32 -- Python 3.8.8, pytest-7.4.3, pluggy-0.13.1 -- C:\Users\korne\anaconda3\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\korne\PycharmProjects\Avito_Analytics_Academy\omd
+plugins: anyio-2.2.0, cov-4.1.0
+collected 3 items                                                                                                                            
+
+test_homework4_5.py::test_ymd_format PASSED                                                                                            [ 33%]
+test_homework4_5.py::test_dmy_format PASSED                                                                                            [ 66%]
+test_homework4_5.py::test_invalid_format PASSED                                                                                        [100%]
+
+============================================================= 3 passed in 3.48s =============================================================
+
+
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+test_homework4_5.py      35     16    54%   31-34, 40-51, 58-72
+---------------------------------------------------
+TOTAL                    35     16    54%
